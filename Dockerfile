@@ -29,7 +29,7 @@ WORKDIR /var/www
 COPY composer.json composer.lock ./
 
 # Menjalankan instalasi dependensi dengan Composer
-RUN composer install --no-scripts --no-autoloader
+RUN composer install --no-dev --optimize-autoloader --no-scripts
 
 # Menyalin seluruh proyek ke dalam kontainer
 COPY . .
