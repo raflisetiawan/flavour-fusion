@@ -1,0 +1,247 @@
+:root {
+    --primary: #b6895b;
+    --bg: #010101;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+  }
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg);
+}
+
+/* Navbar */
+.navbarku {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    background-color: rgba(1, 1, 1, 0.8);
+    border-bottom: 1px solid #644c34;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+  }
+
+  .navbarku .navbarku-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    font-style: italic;
+    text-decoration: none;
+  }
+
+  .navbarku .navbarku-logo span {
+    color: var(--primary);
+  }
+
+  .navbarku .navbarku-nav a {
+    color: #fff;
+    display: inline-block;
+    font-size: 1.3rem;
+    margin: 0 1rem;
+    text-decoration: none;
+  }
+
+  .navbarku .navbarku-nav a:hover {
+    color: var(--primary);
+  }
+
+  .navbarku .navbarku-nav a::after {
+    content: "";
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+  }
+
+  .navbarku .navbarku-nav a:hover::after {
+    transform: scaleX(0.5);
+  }
+
+  .navbarku .navbarku-extra a {
+    color: #fff;
+    margin: 0 0.5rem;
+  }
+
+  .navbarku .navbarku-extra a:hover {
+    color: var(--primary);
+  }
+
+  #hamburger-menu {
+    display: none;
+  }
+
+  /* Navbar Search Form*/
+  .navbarku .search-form {
+    position: absolute;
+    top: 100%;
+    right: 7%;
+    background-color: #fff;
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 0.3s;
+  }
+
+  .navbarku .search-form.active {
+    transform: scaleY(1);
+  }
+
+  .navbarku .search-form input {
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color: var(--bg);
+    padding: 1rem;
+  }
+
+  .navbarku .search-form label {
+    cursor: pointer;
+    font-size: 2rem;
+    margin-right: 1.5rem;
+    color: var(--bg);
+  }
+
+  /* Shopping Cart */
+  #shopping-cart-button {
+    position: relative;
+  }
+
+  #shopping-cart-button .quantity-badge {
+    display: inline-block;
+    padding: 1px 5px;
+    background-color: red;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    position: absolute;
+    top: 0;
+    right: -10px;
+  }
+
+  .shopping-cart {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    height: 100vh;
+    width: 35rem;
+    padding: 0 1.5rem;
+    background-color: #fff;
+    color: var(--bg);
+    transition: 0.3s;
+  }
+
+  .shopping-cart.active {
+    right: 0;
+  }
+
+  .shopping-cart .cart-item {
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #666;
+    position: relative;
+  }
+
+  .shopping-cart img {
+    height: 4rem;
+    border-radius: 50%;
+  }
+
+  .shopping-cart h3 {
+    font-size: 1.4rem;
+  }
+
+  .shopping-cart .item-price {
+    font-size: 1.2rem;
+  }
+
+  .shopping-cart .cart-item #add,
+  .shopping-cart .cart-item #remove {
+    display: inline-block;
+    padding: 2px 5px;
+    cursor: pointer;
+    margin: 0 8px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  .shopping-cart h4 {
+    font-size: 1.6rem;
+    margin-top: -1rem;
+    text-align: center;
+  }
+
+  .contentku{
+   margin-top: 100px;
+  }
+
+
+  /* Media Queries */
+  /* Laptop */
+  @media (max-width: 1366px) {
+    html {
+      font-size: 75%;
+    }
+  }
+
+  /* Tablet */
+  @media (max-width: 768px) {
+    html {
+      font-size: 62.5%;
+    }
+
+    #hamburger-menu {
+      display: inline-block;
+    }
+
+    .navbarku .navbarku-nav {
+      position: absolute;
+      top: 100%;
+      right: -100%;
+      background-color: #fff;
+      width: 30rem;
+      height: 100vh;
+    }
+
+    .navbarku .navbarku-nav.active {
+      right: 0;
+    }
+
+    .navbarku .navbarku-nav a {
+      color: var(--bg);
+      display: block;
+      margin: 1.5rem;
+      padding: 0.5rem;
+      font-size: 2rem;
+    }
+
+    .navbarku .navbarku-nav a::after {
+      transform-origin: 0 0;
+    }
+
+    .navbarku .navbarku-nav a:hover::after {
+      transform: scaleX(0.2);
+    }
+
+    .navbarku .search-form {
+      width: 90%;
+      right: 2rem;
+    }
+  }
+
