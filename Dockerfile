@@ -1,5 +1,5 @@
 # Menggunakan image resmi PHP dengan versi yang diinginkan
-FROM php:8.1-fpm
+FROM php:8.2-fpm
 
 # Menambahkan tools untuk instalasi ekstensi PHP
 RUN apt-get update && apt-get install -y \
